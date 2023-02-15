@@ -19,7 +19,7 @@ dotenv.config();
 const bcryptSalt = bcrypt.genSaltSync(10);
 
 const corsOptions = {
-  origin: "https://aesthetic-cheesecake-8165b3.netlify.app/",
+  origin: "https://aesthetic-cheesecake-8165b3.netlify.app",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
