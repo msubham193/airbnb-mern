@@ -19,7 +19,7 @@ dotenv.config();
 const bcryptSalt = bcrypt.genSaltSync(10);
 
 const corsOptions = {
-  origin: "https://airbnb-0gu1.onrender.com",
+  origin: "http://127.0.0.1:5173",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
@@ -96,7 +96,8 @@ app.post("/login", async (req, res) => {
 
 app.get("/profile", (req, res) => {
   const { token } = req.cookies;
-  // console.log(token);
+
+  console.log(token);
   if (token) {
     jwt.verify(token, process.env.jwtSecret, {}, async (err, userData) => {
       if (err) throw err;
@@ -104,7 +105,7 @@ app.get("/profile", (req, res) => {
       res.status(200).json({ name, email, _id });
     });
   } else {
-    res.status(400).json(null);
+    res.status(400).json(token);
   }
 });
 
@@ -256,7 +257,6 @@ app.post("/bookings", async (req, res) => {
 
     res.status(200).json(doc);
   } catch (error) {
-    
     console.log(error);
   }
 });
