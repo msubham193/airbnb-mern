@@ -11,7 +11,7 @@ const PlaceImg = ({ place, index = 0, className = null }) => {
   return (
     <img
       className={className}
-      src={"http://localhost:8080/uploads/" + place?.photos[index]}
+      src={"https://airbnb-0gu1.onrender.com/uploads/" + place?.photos[index]}
       alt=""
     />
   );

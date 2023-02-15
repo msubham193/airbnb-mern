@@ -3,16 +3,24 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AccountNav from "../AccountNav";
+import Loading from "../Loading";
 import PlaceImg from "../PlaceImg";
 
 const PlacesPage = () => {
   const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios.get("/places").then(({ data }) => {
       setPlaces(data);
+      setLoading(false);
     });
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>
@@ -49,7 +57,9 @@ const PlacesPage = () => {
               </div>
               <div className="grow-0 shrink">
                 <h2 className="text-sm md:text-xl">{place.title}</h2>
-                <p className="text-xs md:text-sm mt-2">{place.description.slice(0,50)}</p>
+                <p className="text-xs md:text-sm mt-2">
+                  {place.description.slice(0, 50)}
+                </p>
               </div>
             </Link>
           ))}

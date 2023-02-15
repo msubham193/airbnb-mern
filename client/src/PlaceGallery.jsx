@@ -31,7 +31,7 @@ const PlaceGallery = ({ place }) => {
           {place?.photos?.length > 0 &&
             place.photos.map((photo) => (
               <div>
-                <img src={"http://localhost:8080/uploads/" + photo} alt="" />
+                <img src={"https://airbnb-0gu1.onrender.com/uploads/" + photo} alt="" />
               </div>
             ))}
         </div>
@@ -48,7 +48,7 @@ const PlaceGallery = ({ place }) => {
               <img
                 onClick={() => setShowAllPhotos(true)}
                 className="aspect-square cursor-pointer object-cover"
-                src={"http://localhost:8080/uploads/" + place.photos[0]}
+                src={"https://airbnb-0gu1.onrender.com/uploads/" + place.photos[0]}
                 alt=""
               />
             </div>
@@ -59,7 +59,7 @@ const PlaceGallery = ({ place }) => {
             <img
               onClick={() => setShowAllPhotos(true)}
               className="aspect-square cursor-pointer object-cover"
-              src={"http://localhost:8080/uploads/" + place.photos[1]}
+              src={"https://airbnb-0gu1.onrender.com/uploads/" + place.photos[1]}
               alt=""
             />
           )}
@@ -68,7 +68,7 @@ const PlaceGallery = ({ place }) => {
               <img
                 onClick={() => setShowAllPhotos(true)}
                 className="aspect-square cursor-pointer object-cover relative top-2"
-                src={"http://localhost:8080/uploads/" + place.photos[2]}
+                src={"https://airbnb-0gu1.onrender.com/uploads/" + place.photos[2]}
                 alt=""
               />
             )}

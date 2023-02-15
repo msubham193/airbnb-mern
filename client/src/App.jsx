@@ -17,7 +17,7 @@ import PlacePage from "./pages/PlacePage";
 import BookingsPage from "./pages/BookingsPage";
 import BookingPage from "./pages/BookingPage";
 
-axios.defaults.baseURL = "http://127.0.0.1:8080";
+axios.defaults.baseURL = "https://airbnb-0gu1.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {
